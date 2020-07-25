@@ -1,0 +1,121 @@
+header{
+    width:100%;
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+    top: 0;
+}
+header div p{
+   align-self: start;
+   margin:auto 10px;
+   padding: 0;
+   font-size: 30px;
+   color:#fffc
+}
+header div p span{
+    color:rgb(51, 106, 138)
+}
+header span a{
+    color:rgb(83, 82, 82)
+}
+header div{
+    height:100%;
+    text-align: start;
+    background-color: #0005;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 12px;
+}
+header a{
+    color:black;
+}
+
+ nav ul h1 a{
+    font-family: Oswald,sans-serif;
+    font-size: 30px;
+    margin:15px 0 0 15px ;
+    color:rgb(255, 255, 255);
+    text-decoration: none !important;
+}
+nav h1 a::after{
+    content: '/>';
+    color:#fff;
+
+}
+nav h1 a::before{
+    content: '<';
+    color:#fff;
+   
+
+}
+header h1{
+    margin: auto 0;
+    padding:0
+}
+
+.hamburger{
+    cursor: pointer;
+    display:none;
+    height: 25px;
+    width: 25px;
+    color: #fffd ;
+    position: relative;
+   margin: 20px 10px 
+
+}
+.hamburger:active{
+    outline: solid 1px #fff;
+}
+nav{
+    position: fixed;
+    top:0;
+    width:100%;
+    transition: .5s ;
+}
+.scroll-nav .active, .scroll-nav .list{
+     background:rgb(83, 82, 82);
+}
+.scroll-nav  {
+    background:rgb(83, 82, 82)
+}
+.scroll-nav h1 a,.scroll-nav ul li a, .scroll-nav .hamburger{
+    color: rgb(255, 255, 255) !important
+}
+nav ul{ 
+    height:40px;
+    background-color:transparent;
+    width:100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    transition: .4s;
+    
+}
+.list{
+  text-align: center;
+  font-size: 1.1em;
+  padding:  0;
+  margin: 0;
+}
+nav ul li{
+    padding: 0 20px;
+}
+nav li a:hover{
+  background-color: #000a;  
+  border-radius: 3px;
+  text-decoration: none;
+  color:#fff;
+    
+}
+
+nav li a{
+    padding: 5px;
+    transition: .2s;
+    font-family: Roboto,sans-serif ;
+    font-weight: bolder;
+    color : #ffffff;
+    font-size: 16px;
+}

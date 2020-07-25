@@ -1,0 +1,39 @@
+footer {
+    margin: 0;
+    background: linear-gradient(to bottom, #000e,#000a);   
+    display: flex;
+    justify-content: space-between;
+}
+footer h3{
+    letter-spacing: 1px;
+    font-size : 20px;
+    color:rgba(255, 255, 255, 0.774)
+
+}
+
+.contacts li{
+   margin-top: 15px;
+}
+
+.contacts{
+    padding: 0;
+    margin-left: 20px;
+} 
+.contacts .contact-img{
+    color: white;
+    height: 30px ;
+    width: 30px
+}
+
+
+footer p{
+    align-self: flex-end;
+    font-family: Arial;
+    padding: 0;
+    margin-right:5px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.795);
+    margin-bottom: 0;
+
+  
+}
