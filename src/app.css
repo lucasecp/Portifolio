@@ -25,6 +25,9 @@ body, #root {
         justify-content: space-between;
         z-index: 1 !important;
     }
+    header div p span{
+        color: #fff !important;
+    }
     nav ul li{
         padding: 10px !important;
     }
@@ -36,7 +39,6 @@ body, #root {
     position: fixed !important;
     left: -100%;
     top:56px;
-    z-index: -1;
 }
     .active{
        left: 0

@@ -73,11 +73,9 @@ export default class extends React.Component {
         toast.success('Mensagem enviada.')
       },3000)
 
-        axios.post('/api/feedback',data)
+        axios.post('https://apiemail.lucasemerson.com.br/feedback',data)
        .then(res=> {
              console.log(res.status)
-             
-           
        })
        .catch(err=> {
            console.log(err)

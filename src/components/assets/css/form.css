@@ -10,7 +10,7 @@ form  h3{
 }
 .formFeedback{
     color:rgb(2, 2, 2);
-    font-family: Oswald;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     padding: 20px 10px;
 
 }
@@ -28,7 +28,7 @@ form  h3{
     
 }
 .formFeedback input:focus, .formFeedback textarea:focus{
-    border:rgb(12, 100, 151)    solid 0.5px;
+    border:rgb(15, 15, 15)    solid 0.5px;
 }
 
 
@@ -52,7 +52,7 @@ form  h3{
     font-size: 0.9em;
     outline: none;
     color:rgb(0, 0, 0);
-    border: solid 0.5px rgb(51, 106, 138);
+    border: solid 0.5px rgb(82, 80, 80) ;
     display: block;
     margin: 20px 0 0 10px ;
     transition: all ease-in-out 100ms;
@@ -61,8 +61,8 @@ form  h3{
 .formFeedback button:hover{
    background-color: transparent;
    color: rgb(255, 255, 255);
-   border: rgb(51, 106, 138) solid 1px;
-   background-color: rgb(51, 106, 138)
+   border: black solid 1px;
+   background-color:black
 
 }
 .formFeedback label{
@@ -70,7 +70,7 @@ form  h3{
 }
 .formFeedback input, .formFeedback textarea{
    border-radius: 5px;
-   border: rgb(51, 106, 138) solid 1px;
+   border: rgb(134, 130, 130) solid 1px;
    background-color: rgba(255, 255, 255, 0.507);
 }
 .errorInput{
@@ -78,6 +78,6 @@ form  h3{
 }
 .spinner{
     margin-left: 10px;
-    color:rgb(51, 106, 138) !important;
+    color:rgb(18, 18, 19) !important;
     margin-top: 15px;
 }

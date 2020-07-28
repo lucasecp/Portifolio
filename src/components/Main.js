@@ -24,7 +24,9 @@ export default () => {
 
                 <h2 >Projetos</h2>
                 <div className='cardContainer'>
-                    <div className='cardImg'></div>
+                    <div className='cardImg'> 
+                    
+                    </div>
                     <div className='cardInfo'><span>Html/Css/Js + Node + MongoDb <br /> Curso online Udemy</span></div>
                     <div className='cardButton'> <button > <a href='https://agenda.lucasemerson.com.br' rel="noopener noreferrer" target='_blank'>Acessar</a></button></div>
                 </div>

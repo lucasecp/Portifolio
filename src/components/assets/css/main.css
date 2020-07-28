@@ -1,8 +1,6 @@
 
 main{
-    padding: 30px 0;
-    background-color: rgb(245, 240, 240);
-  
+    padding: 30px 0;  
 }
 
 .cards{
@@ -21,7 +19,7 @@ main{
     color: rgb(239, 239, 241);
     font-size: 17px;
     cursor:pointer !important;
-    background-color:rgb(49, 155, 197)
+    background-color:darkslategray
 
     
 }
@@ -31,7 +29,7 @@ main section h2{
     letter-spacing: 1px;
     text-align: center;
     color:rgba(47, 47, 47, 0.867);
-    font-family: Oswald,Arial, Helvetica, sans-serif;
+    font-family: Roboto,Arial, Helvetica, sans-serif;
     margin-bottom: 30px ;
     font-size: 1.6em;
     font-weight: 500;
@@ -40,18 +38,19 @@ main section h2{
 main section h2::after{
     content: '';
     display: block;
-    height:3px;
+    height:1px;
     width: 100px;
-    background-color: rgb(51, 106, 138);
-    margin:5px auto 
+    margin:1px auto ;
+    background: #0009;
+
 }
 section.projects h2::after{
     content: '';
     display: block;
-    height:3px;
+    height:1px;
     width: 60px;
-    background-color: rgb(51, 106, 138);
-    margin:5px auto 
+    margin:1px auto ;
+    background: #0009;
 }
 
 .projects{
@@ -70,8 +69,6 @@ section.projects h2::after{
     text-align: center;   
 
 }
-
-
 .projects button{
     height:40px;
     width:90px;
@@ -90,6 +87,7 @@ section.projects h2::after{
    box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.849);
    transition: all linear 500ms;
    border-radius: 10px;
+ 
    
 }
 .cardImg{
@@ -99,17 +97,20 @@ section.projects h2::after{
     grid-area: image;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
+   
 }
 .cardInfo{
     grid-area: text;
-    background-color: rgb(6, 153, 153);
+    background-color: rgb(7, 143, 148);
     color: rgb(255, 255, 255);
+
 }
 
 .cardButton{
     grid-area: button;
-    background-color: rgb(6, 153, 153);
+    background-color: rgb(7, 143, 148);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .cardButton button:hover{
     background-color: rgb(3, 58, 58);
