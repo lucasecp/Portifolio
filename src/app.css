@@ -14,19 +14,21 @@ html{
 body, #root {
     height:100%;
 }
-
+@media (orientation: portrait){
+    header{
+        background-image: url('./components/assets/img/background2.jpg') !important;
+    }
+}
 
 @media screen and (max-width: 768px){
     .hamburger{
      display:block  !important;
     }
+    
     nav{
         display: flex;
         justify-content: space-between;
         z-index: 1 !important;
-    }
-    header div p span{
-        color: #fff !important;
     }
     nav ul li{
         padding: 10px !important;

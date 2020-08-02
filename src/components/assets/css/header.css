@@ -2,8 +2,9 @@ header{
     width:100%;
     background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
+    background-position: 100%;
+    background-attachment: fixed;
     background-size: cover;
-    background-position: center;
     height:100vh;
     top: 0;
 }
@@ -12,20 +13,20 @@ header div p{
    margin:auto 10px;
    padding: 0;
    font-size: 30px;
-   color:#fffc
+   color: #fff
 }
 header div p span{
     font-family: Oswald,Arial, Helvetica, sans-serif;
-    color: rgb(61, 9, 231)
+    color: #007bff
 
 }
 header span a{
-    color:rgb(83, 82, 82)
+    color:#000
 }
 header div{
     height:100%;
     text-align: start;
-    background-color: #0005;
+    background-color: #0008;
     flex-direction: column;
     display: flex;
     justify-content: flex-end;
