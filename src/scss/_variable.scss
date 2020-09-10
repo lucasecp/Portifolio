@@ -1,0 +1,91 @@
+
+$darkMode:#0D0D0D;
+$primaryColor: #08192B;
+$secondaryColor: #F2F2F2;
+$thirdColor: #fff ;
+$fourthColor: #D0D3D9;
+
+
+$fontSm: 18px;
+$fontMd: 24px;
+$fontLg: 36px;
+$fontXl: 48px;
+$fontP: 18px;
+
+$font: 'Oswald',Arial;
+$font2: 'Oswald',Arial;
+$marginSubTitle: 20px;
+$letterSpacing: 1px;
+
+@mixin device($size){
+    @if $size == 'sm-sm'{
+        @media (max-width:260px){
+            @content
+        }
+     };
+    @if $size == 'sm'{
+       @media (max-width:355px){
+           @content
+       }
+    };
+    @if $size == 'md'{
+        @media screen and (max-width: 768px){
+            @content
+        }
+     };
+     @if $size == 'lg'{
+        @media (min-width: 769px){
+            @content
+        }
+     };
+     @if $size == 'lg-lg'{
+        @media (max-width: 950px){
+            @content
+        }
+     };
+     @if $size == 'xl'{
+        @media (min-height:1000px) and (min-width: 1000px){
+            @content
+        }
+     }   
+};
+@mixin fontStyle($type){
+    font-weight: 300;
+    @if $type == 'large'{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: $fontLg;
+    color: $secondaryColor;
+    @include device(md){
+        font-size: 30px;
+    };
+    };
+    @if $type == 'medium'{
+        font-family: 'Oswald', sans-serif;
+        font-size: 28px;
+        color: $primaryColor;
+        @include device(md){
+            font-size: 25px;
+        };
+
+    };
+    @if $type == 'small'{
+        font-family: 'Oswald', sans-serif;
+        font-size: $fontSm;
+        @include device(md){
+            font-size: 17px;
+        };
+        color: $primaryColor;
+        line-height: $fontSm * 1.5;
+
+    }
+    @if $type == 'p'{
+        font-family: 'Arial', sans-serif;
+        font-size: $fontP;
+        color: $primaryColor;
+        line-height: $fontP * 1.5;
+        @include device(md){
+            font-size: 18px;
+        };
+    }
+}

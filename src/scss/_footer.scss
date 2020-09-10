@@ -1,0 +1,16 @@
+footer {
+    margin: 0;
+    background: $primaryColor;   
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include device(xl){
+        height: calc(200px - 100%);
+    }
+}
+footer p{
+    padding: 0;
+    @include fontStyle(small);
+    color: $secondaryColor;
+}

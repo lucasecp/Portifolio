@@ -1,22 +1,22 @@
 import React from 'react'
-import './assets/css/main.css'
+import {useTheme} from '../context/Theme'
 
 export default () => {
-
+    const {theme} = useTheme()
     return (<>
-        <main >
+        <main className={theme === 'dark'? 'darkMain': ''}  >
             <section id='skills' >
                 <h2 >Conhecimentos</h2>
                 <div className='cards'>
 
-                    <div>HTML <br />5</div>
-                    <div className='js'>Javascript</div>  
-                    <div>CSS <br/>3</div> 
-                     <div className='bt'>Bootstrap</div> 
-                      <div>React</div>
-                        <div>Node</div> 
-                         <div>Mysql</div> 
-                          <div>git</div>
+                    <div className='html'>   HTML 5  <div><div></div></div> </div>
+                    <div className='css'>CSS 3 / SASS  <div><div></div></div> </div>
+                    <div className='js'>Javascript/ES6 <div><div></div></div> </div>
+                    <div className='react'>React Js  <div><div></div></div> </div>
+                    <div className='bt'>Bootstrap  <div><div></div></div> </div>
+                    <div className='node'>Node  <div><div></div></div> </div>
+                    <div className='mysql'>Mysql  <div><div></div></div> </div>
+                    <div className='git'>Git  <div><div></div></div> </div>
 
                 </div>
             </section>
@@ -24,11 +24,8 @@ export default () => {
 
                 <h2 >Projetos</h2>
                 <div className='cardContainer'>
-                    <div className='cardImg'> 
-                    
-                    </div>
-                    <div className='cardInfo'><span>Html/Css/Js + Node + MongoDb <br /> Curso online Udemy</span></div>
-                    <div className='cardButton'> <button > <a href='https://agenda.lucasemerson.com.br' rel="noopener noreferrer" target='_blank'>Acessar</a></button></div>
+                    <div className='cardInfo'><span>Sistema CRUD JS <br />HTML- CSS- JS/NODE</span></div>
+                    <div className='cardButton'> <a href='https://agenda.lucasemerson.com.br' rel="noopener noreferrer" target='_blank'>Acessar</a></div>
                 </div>
             </section>
         </main>

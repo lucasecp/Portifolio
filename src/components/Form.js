@@ -1,75 +1,60 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { toast } from 'react-toastify'
 import axios from 'axios'
-import './assets/css/form.css'
 import Spinner from 'react-bootstrap/Spinner'
+import {FaLinkedin} from 'react-icons/fa'
+import {FaWhatsapp} from 'react-icons/fa'
+import {FaGithub} from 'react-icons/fa'
+import {useTheme} from '../context/Theme'
 
-export default class extends React.Component {
-    state = {
-        name: '',
-        email: '',
-        msg: '',
-        errors: [],
-        loading: false,
-    }
+export default function () {
+
+      const {theme} = useTheme()
+
+       const [name,setName] =useState('') 
+      const [email,setEmail] =useState('')
+       const [msg,setMsg] =useState('') 
+       const [errors,setErrors] =useState([]) 
+       const [loading,setLoading] =useState(false) 
+       const [disable, setDisable] = useState(false)
 
 
-    validate = () => {
-        let { errors, name, email, msg } = this.state
+    const validate = () => {
         let newError = errors
+        let newName = name
+        let newEmail = email
+        let newMsg = msg
    
-        if (!email.trim() || !name.trim() || !msg.trim()) {
+        if (!newEmail.trim() || !newName.trim() || !newMsg.trim()) {
             newError.push('Campo(os) vazio(os)')    
         }
         
-        this.setState({
-            errors: newError
-        })
+        setErrors(newError)
     }
-    handleName = (e) => {
-        this.setState({
-            name: e.target.value
-        })
-    }
-    handleEmail = (e) => {
-        this.setState({
-            email: e.target.value
-        })
-    }
-    handleMsg = (e) => {
-        this.setState({
-            msg: e.target.value
-        })
-    }
-    handleSubmit = (e)=>{
+   const handleSubmit = (e)=>{
         e.preventDefault()
        
-        const  {errors} = this.state
-        let newError = errors
+        const newError = errors
         
-        this.validate()
+        validate()
         if(errors.length > 0) {
          newError.map(err=>toast.error(err))
-         this.setState({
-             errors: []
-         })
-        
+         setErrors([])
          return
     }
 
-   return this.sendMessage()               
+   return sendMessage()               
     }
-    sendMessage =  ()  => {
-     this.setState({
-         loading: true
-     })
+    const sendMessage =  ()  => {
+     setLoading( true)
+     setDisable(true)
      const data = {
-          name: this.state.name,
-          email: this.state.email,
-          comments: this.state.msg
+          name: name,
+          email: email,
+          comments: msg
       }
       setTimeout(()=>{
-        this.resetForm()
+        resetForm()
         toast.success('Mensagem enviada.')
       },3000)
 
@@ -79,39 +64,41 @@ export default class extends React.Component {
        })
        .catch(err=> {
            console.log(err)
-           this.resetForm()
+           resetForm()
        })
        
     }
-    resetForm = ()=>{
-        this.setState({
-            name: '',
-            email:'',
-            msg: '',
-            errors: [],
-            loading: false
-        })
+   const resetForm = ()=>{
+       setName('')
+       setEmail('')
+       setErrors([])
+       setLoading(false)
+       setMsg('')
+       setDisable(false)
     }
 
-
-
-    render() {
         return (
-            <>
-                <form onSubmit={this.handleSubmit} className='formFeedback'>
+            <div className={theme === 'dark'? 'darkForm formContainer' : 'formContainer' }>
+                <form onSubmit={handleSubmit} className='formFeedback' id='contacts'>
                     <h3>Contato</h3>
 
                     <label htmlFor='name'>Nome:</label>
-                    <input maxLength='70' required type='text' value={this.state.name} onChange={this.handleName} name='name' />
+                    <input maxLength='70' required type='text' value={name} onChange={e=> setName(e.target.value)} name='name' />
                     <label  htmlFor='email'>Email:</label>
-                    <input maxLength='70' required type='email' value={this.state.email} onChange={this.handleEmail} name='email' />
+                    <input maxLength='70' required type='email' value={email} onChange={e=> setEmail(e.target.value)} name='email' />
                     <label htmlFor='comments'>Mensagem:</label>
-                    <textarea maxLength='400' required type='text' value={this.state.msg} onChange={this.handleMsg} name='comments'></textarea>
-                    <Spinner className='spinner' animation={this.state.loading ? 'border' : ''} variant="primary"/>
-                    <button type='submit'>Enviar</button>
+                    <textarea maxLength='400' required type='text' value={msg} onChange={e=> setMsg(e.target.value)} name='comments'></textarea>
+                    <button type='submit' disabled={disable}>Enviar</button>
+                    <Spinner className='spinner' animation={loading ? 'border' : ''} variant="primary"/>
                 </form>
-            </>
+                <div className='networks'>
+                <h3>Redes Sociais</h3>
+                <ul className='contacts'>
+                <li><a href='https://github.com/lucasecp' target='_blank'  rel="noopener noreferrer"><FaGithub className='contact-img'/>github.com/lucasecp</a></li>
+                <li><a href='https://api.whatsapp.com/send?phone=5521993371281'  rel="noopener noreferrer" target='_blank'><FaWhatsapp className='contact-img'/>(21) 9 9337-1281</a></li>
+                <li><a href='https://www.linkedin.com/in/lucas-emerson/'  rel="noopener noreferrer" target='_blank'><FaLinkedin className='contact-img'/>linkedin.com/in/lucas-emerson/</a></li>
+            </ul>
+            </div>
+            </div>
         )
-
-    }
-}  
+} 
