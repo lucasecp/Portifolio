@@ -1,0 +1,48 @@
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    list-style:none;
+    text-decoration: none;
+    font-family: $font2,$font;
+    transition:  background 300ms ease-in;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body, #root {
+    height:100%;
+    background: $secondaryColor;
+}
+@media (orientation: portrait){
+   header div{
+       background-image: url('../assets//img/backgroundSm.jpg') !important;
+   }
+}
+
+@media screen and (max-width: 768px){
+
+    .list{
+    display: inline-block !important;
+    transition: .5s;
+    width:100% !important;
+    position: fixed !important;
+    left: -100%;
+    @include device(md){
+        top:40px;
+      }
+    z-index: -1;
+}
+ 
+ 
+}
+@media (min-width: 769px){
+    .list{
+        display: flex;
+        justify-content: space-between;
+        transition: none !important;
+    }
+}
+

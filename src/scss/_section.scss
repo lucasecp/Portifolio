@@ -1,0 +1,43 @@
+.about{
+   padding: 50px 0;
+}
+
+
+.about h2{
+    text-align: start;
+    text-align: center;
+    padding: 30px;
+    @include fontStyle(medium);
+    
+}
+.about h2::after{
+    content: '';
+    display: block;
+    height:1px;
+    width: 100px;
+    margin:1px auto ;
+    background: #0009;
+    @include device(md){
+        width:70px
+    }
+}
+.about p{
+    padding:0 80px ;
+    @include fontStyle(p);
+    @include device(md){
+        padding: 20px;
+    }
+    @include device(lg){
+        font-size:20px;
+    }
+    
+}
+.darkAbout h2, .darkAbout p {
+    color:$fourthColor
+}
+.darkAbout h2::after{
+    background:$fourthColor
+}
+.darkAbout {
+    background:$darkMode
+}

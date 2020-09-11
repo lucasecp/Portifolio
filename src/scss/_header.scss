@@ -1,0 +1,168 @@
+header{
+    width:100%;
+    height:100vh;
+}
+
+header div{
+    height:100%;
+    width: 100%;
+    background-image: url('../assets/img/backgroundN.jpg');
+    background-repeat: no-repeat;
+    @include device(lg){
+    background-attachment: fixed;
+    }
+    background-size: cover;
+  
+  
+}
+.list .listNetworks{
+    display: flex;
+        @include device(md){
+            border-top: $secondaryColor solid 1px;
+            justify-content: space-evenly;
+            align-items: center;
+        & li{
+            margin: 0 ;
+        }
+        }
+        @include device(sm-sm){
+            flex-direction: column;
+        }
+        @include device(lg){
+          border-left: $secondaryColor solid 1px;
+          justify-content: space-around;
+        }
+}
+
+
+ nav ul h1 a{
+    @include fontStyle(large);
+    color:$secondaryColor;
+    text-decoration: none !important;
+    letter-spacing: 1px;
+    &:hover{
+        color: $secondaryColor;
+    }
+}
+nav ul h1{
+    margin: 5px 10px;
+}
+
+.hamburger{
+    cursor: pointer;
+    display:none;
+    height: 25px;
+    width: 25px;
+    color: $secondaryColor ;
+    position: relative;
+    top: 10px;
+    right:10px;
+   @include device(md){
+       display:block  !important;
+}
+
+}
+.hamburger:active{
+    outline: solid 1px $secondaryColor;
+}
+nav{
+    position: fixed;
+    top:0;
+    width:100%;
+    transition: .5s ;
+    z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1 !important;
+      @include device(md){
+        height:45px;
+      }
+}
+.listBg{
+    display:flex;
+    align-items: center;
+    @include device(md){
+        height: 100vh;
+        width: 100%;
+        z-index: 3;
+        position: absolute;
+        display:flex;
+    }
+}
+
+nav li{
+    @include device(lg){
+        margin: auto 0
+    }
+}
+.active{
+    @include device(md){
+        left: 0
+      }
+}
+.scroll-nav .active, .scroll-nav .list{
+     background:$primaryColor;
+}
+.scroll-nav  {
+    background:$primaryColor;
+}
+// Dark mode
+.darkNav .scroll-nav .active, .darkNav .scroll-nav .list{
+  background:$darkMode;
+}
+.darkNav .scroll-nav  {
+    background:$darkMode;
+}
+.darkNav a, .darkNav .hamburger{
+    color: $fourthColor
+}
+.scroll-nav .list{
+    @include device(lg){
+    background: none !important;
+    }
+}
+.scroll-nav h1 a, .scroll-nav .hamburger{
+    color: $secondaryColor !important
+}
+nav ul{ 
+    width:100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    transition: .4s;
+    height:100%;
+    
+}
+.list{
+  text-align: center;
+  padding:  0;
+  margin: 0;   
+
+}
+nav ul li{
+    padding: 0 20px;
+    @include device(md){
+        padding: 10px !important;
+    }
+}
+
+nav li a{
+    @include fontStyle(small);
+    font-family: $font;
+    padding: 5px;
+    transition: .2s;
+    color : $thirdColor;
+    &:hover{
+        color: $thirdColor
+    }
+}
+.contact-img{
+    color: $secondaryColor;
+    height: 30px;
+    width: 30px;
+    margin:10px
+}
+nav ul .listNetworks li{
+    padding:5px
+}

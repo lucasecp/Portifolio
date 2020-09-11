@@ -1,0 +1,240 @@
+@mixin progress($size,$height: 50%){
+   border: solid #1155a3 2px;
+   width:$size;
+   height:$height;
+   border-radius: 4px;
+   background: #1155a3;
+}
+section#skills{
+   @include device(md){
+    width:100%;
+   } 
+}
+main{
+    padding: 90px 0;  
+        display: flex;
+        justify-content: space-around;
+       
+      border-top:solid  $thirdColor;
+      @include device(lg-lg){
+          flex-direction: column;
+      }
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+    align-items: center;
+    justify-content: center;
+    @include device(md){
+        display:grid !important;
+        grid-template-columns: repeat(1,1fr) !important;
+        grid-template-rows: repeat(8,1fr) !important;
+    }
+    @include device(lg-lg){
+        width:100%;
+        margin-bottom: 50px;
+        
+    }
+}
+
+.cards > div{
+    margin: 20px;
+    color: $primaryColor;
+    @include fontStyle(small);
+      
+    @include device(lg-lg){
+        margin:10px auto;
+    }
+    @include device(md){
+     margin: 10px;
+    }
+  
+}
+.cards div > div{
+    display: flex;
+    align-items: center;
+    @include progress(250px,10px);
+    border: solid $primaryColor 1px;
+    background: transparent;
+    @include device(md){
+       width: 100%;
+       };
+}
+.cards .html div div{
+    content:'';
+    @include progress(70%);
+    
+}
+.cards .css  div div{
+    content:'';
+    @include progress(70%);
+    
+}
+.cards .js div div{
+    content:'';
+    @include progress(65%);
+    
+}
+.cards .react div div{
+    content:'';
+    @include progress(59%);
+    
+}
+.cards .bt div div{
+    content:'';
+    @include progress(50%);
+    
+}
+.cards .mysql div div{
+    content:'';
+    @include progress(55%);
+    
+}
+.cards .git div div{
+    content:'';
+    @include progress(50%);
+    
+}
+.cards .node div div{
+    content:'';
+    @include progress(55%);
+    
+}
+main section h2{
+    letter-spacing: $letterSpacing;
+    text-align: center;  
+    margin-bottom: $marginSubTitle ;
+    @include fontStyle(medium)
+    
+}
+main section h2::after{
+    content: '';
+    display: block;
+    height:1px;
+    width: 100px;
+    margin:1px auto ;
+    background: #0009;
+
+}
+section.projects h2::after{
+    content: '';
+    display: block;
+    height:1px;
+    width: 60px;
+    margin:3px auto ;
+    background: #0009;
+}
+
+.projects{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include device(md){
+        width:100%;
+        margin: 30px 0;
+        text-align: center;
+        & h2,.cardContainer{
+            margin-left:10px
+        }
+        
+    }
+    @include device(md){
+        justify-content: flex-start !important;
+
+    }
+    ;
+    @include device(lg){
+        margin:0
+    }
+
+}
+.projects span{
+    text-align: center;  
+    @include fontStyle(small)
+
+}
+.projects a{
+    padding:5px 15px;
+    border-radius: 5px;
+    margin: auto;
+    transition: linear all 100ms;
+    border: solid $primaryColor 1px;
+    @include fontStyle(small);
+    text-decoration: none;
+    color:$primaryColor;
+   &:hover{
+        background: $primaryColor;
+        color: $secondaryColor
+         
+    }
+}
+.cardContainer {
+   display: grid;
+   grid-template-columns: 300px;
+   grid-template-rows: 80px 60px ;
+   grid-template-areas: 'text''button';
+   border-radius: 10px;
+   box-shadow: 10px 10px 11px 10px inset $fourthColor;
+         @include device(md){
+    grid-template-columns: 300px;
+   }
+   @include device(sm){
+    grid-template-columns: 250px;
+
+   }
+   @include device(sm-sm){
+    grid-template-columns: 200px;
+
+   }
+}
+
+.cardInfo{
+    grid-area: text;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-self: center;
+    & span{
+        color: $primaryColor ;
+        }
+}
+
+.cardButton{
+    grid-area: button;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+ }
+
+.darkMain {
+    background:$darkMode;
+    border:none;
+}
+.darkMain .cardContainer{
+    background:linear-gradient(to bottom, $primaryColor, #1155a3);
+    box-shadow: none;
+    & a:hover{
+     background: $primaryColor
+    }
+}
+.darkMain h2 {
+    color:$fourthColor
+}
+.darkMain section h2::after {
+    background:$fourthColor
+}
+.darkMain .cards > div {
+    color:$fourthColor
+}
+.darkMain .cards div div {
+    border: solid $fourthColor 1px;
+    & div {
+        border: solid #1155a3 2px !important;
+    }
+}
+.darkMain span,.darkMain a{
+    color: $fourthColor;
+}
