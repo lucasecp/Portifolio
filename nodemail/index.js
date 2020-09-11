@@ -16,7 +16,7 @@ app.post('/api/feedback',(req,res)=>{
     const data = req.body
     const smtpTransport = nodemailer.createTransport({
         host: process.env.HOST,
-        port: 587,
+        port: process.env.PORTEMAIL,
         auth:{
             user: process.env.EMAIL,
             pass: process.env.PASS
@@ -31,11 +31,10 @@ app.post('/api/feedback',(req,res)=>{
        }
        smtpTransport.sendMail(mailOptions)
        .then(msg=> {
-          console.log(msg)
-          return res.send(msg)
+          return res.json(msg)
         })
        .catch(error=> {
-         return res.send(error)
+         return res.json(error)
        } )
 })
 
