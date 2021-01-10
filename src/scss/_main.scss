@@ -1,66 +1,73 @@
 @mixin progress($size,$height: 50%){
-   border: solid #1155a3 2px;
+   border: solid #3274d6 2px; //color
    width:$size;
    height:$height;
    border-radius: 4px;
-   background: #1155a3;
+   transition: 2s width ease;
+}
+.progress{
+    width: 0 !important;
 }
 section#skills{
-   @include device(md){
-    width:100%;
-   } 
+    width:950px;
+    max-width: 100%;
+    @include device (lg-lg){
+        width: 100%;
+    }
 }
 main{
-    padding: 90px 0;  
+    padding: 60px 0;  
         display: flex;
-        justify-content: space-around;
-       
-      border-top:solid  $thirdColor;
-      @include device(lg-lg){
+        justify-content: center;
+        align-items: center;
           flex-direction: column;
-      }
+          @include device (lg-lg){
+            align-items: flex-start
+        }
+
+
 }
 
 .cards{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(4,1fr);
-    align-items: center;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    margin-bottom: 50px;
     justify-content: center;
-    @include device(md){
+    align-items: center;
+    @include device(lg-lg){
+        width:100%;
         display:grid !important;
         grid-template-columns: repeat(1,1fr) !important;
         grid-template-rows: repeat(8,1fr) !important;
-    }
-    @include device(lg-lg){
-        width:100%;
-        margin-bottom: 50px;
-        
     }
 }
 
 .cards > div{
     margin: 20px;
-    color: $primaryColor;
     @include fontStyle(small);
       
-    @include device(lg-lg){
-        margin:10px auto;
-    }
     @include device(md){
-     margin: 10px;
+     margin: 20px 10px;
     }
   
 }
+
 .cards div > div{
     display: flex;
     align-items: center;
-    @include progress(250px,10px);
-    border: solid $primaryColor 1px;
+    @include progress(300px,10px);
+    border: solid black 1px;
     background: transparent;
-    @include device(md){
+    @include device(lg-lg){
        width: 100%;
+
        };
+}
+.cards > div span{
+  font-size: 1.1875em !important;
+  margin-right: 5px;
+ 
 }
 .cards .html div div{
     content:'';
@@ -84,7 +91,7 @@ main{
 }
 .cards .bt div div{
     content:'';
-    @include progress(50%);
+    @include progress(65%);
     
 }
 .cards .mysql div div{
@@ -106,7 +113,8 @@ main section h2{
     letter-spacing: $letterSpacing;
     text-align: center;  
     margin-bottom: $marginSubTitle ;
-    @include fontStyle(medium)
+    @include fontStyle(medium);
+
     
 }
 main section h2::after{
@@ -128,84 +136,113 @@ section.projects h2::after{
 }
 
 .projects{
-    height:100%;
+    width: 950px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    @include device(md){
-        width:100%;
-        margin: 30px 0;
+    margin: 60px 0;
+    @include device(lg-lg){
         text-align: center;
         & h2,.cardContainer{
-            margin-left:10px
+            margin-left:10px;
+            margin-right: 10px;
         }
         
     }
-    @include device(md){
-        justify-content: flex-start !important;
-
-    }
-    ;
-    @include device(lg){
-        margin:0
-    }
 
 }
-.projects span{
-    text-align: center;  
-    @include fontStyle(small)
 
-}
-.projects a{
-    padding:5px 15px;
+.projects div a{
+    padding:10px 20px;
     border-radius: 5px;
     margin: auto;
     transition: linear all 100ms;
-    border: solid $fourthColor 1px;
     @include fontStyle(small);
     text-decoration: none;
-    color:$secondaryColor;
-   &:hover{
-        background: $primaryColor;
-         
-    }
+    color:  $thirdColor;
+    background: $primaryColor;
+    
 }
 .cardContainer {
+   position: relative;
    display: grid;
-   grid-template-columns: 300px;
-   grid-template-rows: 80px 60px ;
-   grid-template-areas: 'text''button';
+   grid-template-columns: 250px 1fr auto;
+   text-decoration: none !important;
+   box-shadow: 3px 3px 7px  rgba(0,0,0,0.2);
    border-radius: 10px;
-   background: $primaryColor;
-         @include device(md){
-    grid-template-columns: 300px;
-   }
-   @include device(sm){
-    grid-template-columns: 250px;
+   max-width: 100%;
+   background: #fff
+   
+}
+@media (max-width: 600px){
+    .cardContainer{
+        grid-template-columns: 1fr;
+    }
+    .cardHeader{
+     border-top-right-radius: 10px;
+    border-bottom-left-radius: 0 !important; 
+    text-align:start;
+    padding: 20px 30px !important;
+    }
+    .cardButton{
+        margin-bottom: 20px !important
+    }
+ 
+}
+.cardContainer + .cardContainer{
+   margin-top: 50px
+}
+.cardHeader{
+   position: relative;
+    background: $primaryColor;
+  font-weight: 300;
+  padding:40px 50px ;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 
-   }
-   @include device(sm-sm){
-    grid-template-columns: 200px;
-
-   }
 }
 
+.cardHeader h3{
+    @include fontStyle(medium);
+    color: $thirdColor;
+}
+.cardHeader h5{
+   
+    @include fontStyle(small) ;
+    color: $fourthColor;
+
+}
+
+
 .cardInfo{
-    grid-area: text;
-    border-top-left-radius: 10px;
+    
+    text-align: start;
+    padding: 20px 10px;
     border-top-right-radius: 10px;
-    align-self: center;
-    & span{
-        color: $secondaryColor ;
-        }
+    border-bottom-right-radius: 10px
+    
+}
+.cardInfo h4{
+    
+    @include fontStyle(small);
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    color: rgb(107, 107, 107)
+   
+}
+.cardInfo p{
+    @include fontStyle(small);
+    margin-top:30px;
+    font-family: 'Roboto';
+    color: rgb(107, 107, 107)
 }
 
 .cardButton{
-    grid-area: button;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+ align-self: end;
+ margin-bottom:30px;
+ margin-right: 20px;
+
  }
 
 .darkMain {
@@ -213,7 +250,10 @@ section.projects h2::after{
     border:none;
 }
 .darkMain .cardContainer{
-    background:linear-gradient(to bottom, $primaryColor, #1155a3);
+    box-shadow: none;
+    & a:hover{
+     background: $primaryColor
+    }
 }
 .darkMain h2 {
     color:$fourthColor
@@ -229,7 +269,4 @@ section.projects h2::after{
     & div {
         border: solid #1155a3 2px !important;
     }
-}
-.darkMain span,.darkMain a{
-    color: $fourthColor;
 }

@@ -1,16 +1,17 @@
 
 $darkMode:#0D0D0D;
-$primaryColor: #08192B;
+$primaryColor: #1155a3 ;
 $secondaryColor: #F2F2F2;
 $thirdColor: #fff ;
 $fourthColor: #D0D3D9;
+$fontColor: rgba(0,0,0,1);
+ 
 
-
-$fontSm: 18px;
-$fontMd: 24px;
-$fontLg: 36px;
-$fontXl: 48px;
-$fontP: 18px;
+$fontSm: 1.125em;
+$fontMd: 1.625em;
+$fontLg: 2.25em;
+$fontXl: 3em;
+$fontP: 1.25em;
 
 $font: 'Oswald',Arial;
 $font2: 'Oswald',Arial;
@@ -23,11 +24,6 @@ $letterSpacing: 1px;
             @content
         }
      };
-    @if $size == 'sm'{
-       @media (max-width:355px){
-           @content
-       }
-    };
     @if $size == 'md'{
         @media screen and (max-width: 768px){
             @content
@@ -39,7 +35,7 @@ $letterSpacing: 1px;
         }
      };
      @if $size == 'lg-lg'{
-        @media (max-width: 950px){
+        @media (max-width: 1000px){
             @content
         }
      };
@@ -48,24 +44,26 @@ $letterSpacing: 1px;
             @content
         }
      }   
+   
 };
 @mixin fontStyle($type){
     font-weight: 300;
+
     @if $type == 'large'{
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-size: $fontLg;
     color: $secondaryColor;
     @include device(md){
-        font-size: 30px;
+        font-size: 1.875em;
     };
     };
     @if $type == 'medium'{
         font-family: 'Oswald', sans-serif;
-        font-size: 28px;
-        color: $primaryColor;
+        font-size: 1.75em;
+        color: $fontColor;
         @include device(md){
-            font-size: 25px;
+            font-size: 1.5625em;
         };
 
     };
@@ -73,19 +71,20 @@ $letterSpacing: 1px;
         font-family: 'Oswald', sans-serif;
         font-size: $fontSm;
         @include device(md){
-            font-size: 17px;
+            font-size: 1.0625em;
         };
-        color: $primaryColor;
+        color: $fontColor;
         line-height: $fontSm * 1.5;
 
     }
     @if $type == 'p'{
         font-family: 'Arial', sans-serif;
         font-size: $fontP;
-        color: $primaryColor;
+        color: $fontColor;
         line-height: $fontP * 1.5;
+        
         @include device(md){
-            font-size: 18px;
+            font-size: 1.125em;
         };
     }
 }

@@ -6,6 +6,7 @@ import Section from './components/Section'
 import Main from './components/Main'
 import Form from './components/Form'
 import Footer from './components/Footer'
+import Button from './components/Button'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -17,7 +18,7 @@ export default () => {
         <>
             <ThemeProvider>
                 <Header />
-               
+                <Button/>
                 <Section />
                 <Main />
                 <Form />

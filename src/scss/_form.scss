@@ -8,34 +8,34 @@ form  h3, .formContainer h3{
             height:1px;
             width: 60px;
             margin:1px 10px ;
-            background: $primaryColor;
+            background: black;
     }
 }
 .formContainer{
-    width:100%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     & .networks{
+        max-width: 425px;
+        margin: 30px auto;
         align-self: start;
         display: flex;
         flex-direction: column;
-        margin: 30px auto;
         @include device(md){
             margin:50px 10px;
         }
         & .contacts{
             flex-direction: column;
              & a:hover{
-                color:$primaryColor
+                color:#1155a3
+            }
+            & li +li {
+              margin-top:20px
             }
             & a{
                 @include fontStyle(small);
-                color:#1155a3;
-            }
-            & li+ li{
-                margin:10px 0;
+                color: #08192B;
+                
             }
         
         & ul{
@@ -62,9 +62,10 @@ form  h3, .formContainer h3{
 }
 
 .formFeedback{
-    margin: 30px auto ;
     display:flex;
     flex-direction: column;
+    max-width: 425px;
+    margin: 30px auto;
     @include device(md){
         margin: 0;
         padding:10px;
@@ -74,7 +75,7 @@ form  h3, .formContainer h3{
 }
 .formFeedback input{
     padding: 10px;
-    width: 300px;
+    width: 400px;
     height:40px;
     margin-bottom: 15px;
     outline: none;
@@ -82,20 +83,20 @@ form  h3, .formContainer h3{
     color: black;
     font-family: 'Roboto',Arial;
     @include device(md){
-        width:60%;
+        width:90%;
     }
     
 }
 .formFeedback textarea{
    outline: none;
    height: 150px;
-   width: 400px;
+   width: 500px;
    padding: 10px;
    @include fontStyle(small);
    color: black;
    font-family: 'Roboto',Arial;
    @include device(md){
-   width:80%
+   width:100%
 }
 }
 
@@ -112,8 +113,8 @@ form  h3, .formContainer h3{
 }
 .formFeedback input, .formFeedback textarea, .formFeedback button{
    border-radius: 5px;
-   border: $primaryColor solid .2px;
-   background: $secondaryColor;
+   border: rgb(106, 103, 103) solid 1px;
+   background: transparent;
 }
 .formFeedback button{
     @include fontStyle(small);
@@ -122,7 +123,6 @@ form  h3, .formContainer h3{
     width:90px;
     cursor: pointer;
     outline: none;
-    border: solid 0.4px $primaryColor ;
     transition: all ease-in-out 100ms;
     display: inline-block;
     margin-top: 10px;
@@ -135,7 +135,7 @@ form  h3, .formContainer h3{
 .darkForm{
    background: $darkMode;
 }
-.darkForm h3,.darkForm label,.darkForm .spinner, .darkForm h3::after,.darkForm .contact-img{
+.darkForm h3,.darkForm label,.darkForm .spinner, .darkForm h3::after,.darkForm .github{
     color:$fourthColor!important
 }
 .darkForm h3::after{
@@ -143,8 +143,7 @@ form  h3, .formContainer h3{
 }
 
 .darkForm .formFeedback input, .darkForm .formFeedback textarea, .darkForm button{
-    background: transparent;
-    border: solid 0.5px #1155a3;
+    border: solid 2px $primaryColor;
     color: $secondaryColor
 }
 .darkForm .contacts a{

@@ -1,14 +1,15 @@
 .btnContainer{
-    width:65px;
-    height:30px;
+    width:70px;
+    height:35px;
     border-radius: 20px;
     cursor:pointer;
     border:solid 2px $fourthColor;
-    margin: auto 10px;
+    position: fixed;
+    bottom: 10px ;
+    right: 20px;
+    z-index:999;
 }
-[theme='white'].btnContainer{
-    background:$primaryColor;
-}
+
 [theme='dark'].btnContainer{
     background:$secondaryColor;
 }
@@ -24,12 +25,12 @@
 }
 .ball{
     position: absolute;
-    transition: 200ms all ease-in-out;
+    transition: 200ms ease;
     left:0;
     top:0;
     height:100%;
     width:50%;
-    border-radius: 20px;
+    border-radius: 50%;
     background:$secondaryColor;
     border:solid 1px $primaryColor;
 }
