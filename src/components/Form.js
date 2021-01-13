@@ -58,7 +58,7 @@ export default function () {
         toast.success('Mensagem enviada.')
       },3000)
 
-        axios.post('https://apiemail.lucasemerson.com.br/feedback',data)
+        axios.post('https://apinodemail.herokuapp.com/feedback',data)
        .then(res=> {
              console.log(res.status)
        })
