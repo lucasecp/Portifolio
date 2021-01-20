@@ -3,22 +3,23 @@ import {useTheme} from '../context/Theme'
 
 export default () => {
     const {theme} = useTheme();
+
+
+   
     window.addEventListener('scroll',function(){
-        const windowScroll = this.scrollY;
         const progress = document.querySelectorAll('.progress');
+        const windowScroll = this.scrollY;
         const nav =  document.querySelector('nav').offsetHeight + 550;
-       
+        if(progress.length === 0 ) return;
+        
         for(let i=0 ; i < progress.length; i++){
-            if(progress.length && windowScroll > progress[i].offsetTop - nav ){
+            if(windowScroll > progress[i].offsetTop - nav ){
                 progress[i].classList.remove('progress')
                 
             }
-            else return
         }
-        console.log(progress);
-   
-       
     })
+
 
 
 
@@ -30,14 +31,14 @@ export default () => {
                 <h2 >Habilidades</h2>
                 <div className='cards'>
 
-                    <div className='html'><span>HTML 5  </span> (intermediário) <div><div className='progress'></div></div> </div>
-                    <div className='css'><span>CSS 3 / SASS   </span> (intermediário) <div><div className='progress'></div></div> </div>
-                    <div className='js'><span>Javascript(ES6) / Jquery   </span> (intermediário) <div><div className='progress'></div></div> </div>
-                    <div className='react'><span>React Js   </span> (intermediário)  <div><div className='progress'></div></div> </div>
-                    <div className='bt'><span>Bootstrap 4  </span> (intermediário) <div><div className='progress'></div></div> </div>
-                    <div className='node'><span>Node   </span> (básico) <div><div className='progress'></div></div> </div>
-                    <div className='mysql'><span>Mysql  </span> (intermediário) <div><div className='progress'></div></div> </div>
-                    <div className='git'><span>Git  </span> (básico)  <div><div className='progress'></div></div> </div>
+                    <div className='html'><span>HTML 5  </span> (intermediário) <div><div className='progress  '></div></div> </div>
+                    <div className='css'><span>CSS 3 / SASS   </span> (intermediário) <div><div className='progress '></div></div> </div>
+                    <div className='js'><span>Javascript(ES6) / Jquery   </span> (intermediário) <div><div className='progress '></div></div> </div>
+                    <div className='react'><span>React Js   </span> (intermediário)  <div><div className='progress '></div></div> </div>
+                    <div className='bt'><span>Bootstrap 4  </span> (intermediário) <div><div className='progress '></div></div> </div>
+                    <div className='node'><span>Node   </span> (básico) <div><div className='progress '></div></div> </div>
+                    <div className='mysql'><span>Mysql  </span> (intermediário) <div><div className='progress '></div></div> </div>
+                    <div className='git'><span>Git  </span> (básico)  <div><div className='progress '></div></div> </div>
 
                 </div>
             </section>
