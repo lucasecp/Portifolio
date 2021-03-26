@@ -21,7 +21,7 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
-    background: $primaryColor
+    background: $primaryColor 
 }
 .ball{
     position: absolute;
@@ -32,7 +32,6 @@
     width:50%;
     border-radius: 50%;
     background:$secondaryColor;
-    border:solid 1px $primaryColor;
 }
 [theme='dark'] .ball{
     left:50%;

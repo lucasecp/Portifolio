@@ -3,6 +3,7 @@ import {FaBars} from 'react-icons/fa'
 import {FaLinkedin} from 'react-icons/fa'
 import {FaWhatsapp} from 'react-icons/fa'
 import {FaGithub} from 'react-icons/fa'
+
 export default ()=> {
     useEffect(()=>{
         const list = document.querySelector('.list')
@@ -23,8 +24,6 @@ export default ()=> {
         const element = document.querySelector('.list')
         element.classList.toggle('active')
     }
- 
-
     return(
         <>
            
@@ -34,7 +33,6 @@ export default ()=> {
                <h1> <a href='/'>Lucas</a> </h1>
                    <div className='list'>
                    <li><a href='#about'>Sobre</a></li>
-                   <li><a href='#skills'>Conhecimentos</a></li>
                    <li><a href='#projects'>Projetos</a></li>
                    <li><a href='#contacts'>Contato</a></li>
 
@@ -56,12 +54,9 @@ export default ()=> {
             </nav> 
            
             <header>
-                <div> 
-                
-                
-                  </div>
-           </header>
-        
+               <div className='bg-header'>
+              </div>
+           </header> 
      </>
     )
     }

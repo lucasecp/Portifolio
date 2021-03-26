@@ -1,0 +1,50 @@
+.curriculum{
+    position: fixed;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width: 100%;
+    top:0;
+    left:0;
+     transition: none !important;
+    display:none
+}
+.active-curriculum{
+    opacity: 1;
+     z-index:8;
+     animation: curriculum .2s ease-in;
+     display: flex
+     
+     
+}
+.curriculum .curriculum-container{
+    position: relative;
+    flex: 1 0 200px;
+    max-width:450px;
+    padding: 10px;
+}
+
+.curriculum button{
+   position: absolute;
+   border-radius: 50%;
+   border: solid 2px $secondaryColor;
+   background: $primaryColor;
+   top:2px;
+   right:2px;
+   @include fontStyle('small');
+   color: $thirdColor;
+   width: 40px ;
+   height: 40px ;
+   padding: 0
+}
+@keyframes curriculum{
+    from{
+        transform: scale(0)
+    }
+    to{
+        transform: scale(1)
+    }
+}

@@ -20,6 +20,19 @@
 .section-container{
     max-width: 950px;
     margin: 0 auto;
+    display: flex;
+    flex-direction:column;
+}
+
+.outline-btn{
+    padding: 5px 30px ;
+    background: $primaryColor;
+    border-radius: 5px ;
+    @include fontStyle('small');
+    color: $thirdColor;
+    border: $thirdColor 2px solid;
+    margin: 20px auto !important;
+    border-radius: 5px
 }
 .about p{
     padding: 10px;

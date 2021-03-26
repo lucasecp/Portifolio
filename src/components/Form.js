@@ -95,7 +95,7 @@ export default function () {
                 <h3>Redes Sociais</h3>
                 <ul className='contacts'>
                 <li><a href='https://github.com/lucasecp' target='_blank'  rel="noopener noreferrer"><FaGithub className='contact-img github' color='black'/>github.com/lucasecp</a></li>
-                <li><a href='https://api.whatsapp.com/send?phone=5521993371281'  rel="noopener noreferrer" target='_blank'><FaWhatsapp className='contact-img' color='#4AC959'/>(21) 9 9337-1281</a></li>
+                <li><a href='https://api.whatsapp.com/send?phone=5521993371281'  rel="noopener noreferrer" target='_blank'><FaWhatsapp className='contact-img' color='#32CD32 '/>(21) 9 9337-1281</a></li>
                 <li><a href='https://www.linkedin.com/in/lucas-emerson/'  rel="noopener noreferrer" target='_blank'><FaLinkedin className='contact-img' color=' #2867B2'/>linkedin.com/in/lucas-emerson/</a></li>
             </ul>
             </div>
