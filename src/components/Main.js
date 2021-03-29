@@ -22,7 +22,7 @@ export default () => {
                          <h3>World Trip</h3> 
                     </div>
                     <div className='cardInfo'> <h4>html, css/Bootstrap & javascript/Jquery</h4><p>Agência de intercâmbio.</p></div>
-                    <div className='cardButton'> <a href='https://lucasecp.github.io/world-trip/' rel="noopener noreferrer" target='_blank'>Acessar</a></div>
+                    <div className='cardButton'> <a href='https://wordtripviagens.netlify.app/' rel="noopener noreferrer" target='_blank'>Acessar</a></div>
                 </div>
                 <div className='cardContainer' >
                 <div className='cardHeader'>
@@ -30,7 +30,7 @@ export default () => {
                      <h3>Hobbies</h3>
                  </div>
                     <div className='cardInfo'><h4>html, css & javascript</h4> <p>Website sobre meus hobbies.</p> </div>
-                    <div className='cardButton'> <a href='https://lucasecp.github.io/hobbies/' rel="noopener noreferrer" target='_blank'>Acessar</a></div>
+                    <div className='cardButton'> <a href='https://meushobbies.netlify.app/' rel="noopener noreferrer" target='_blank'>Acessar</a></div>
                 </div>
                
                 
