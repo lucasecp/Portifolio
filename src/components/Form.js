@@ -78,20 +78,31 @@ export default function () {
     }
 
         return (
-            <div className={theme === 'dark'? 'darkForm formContainer' : 'formContainer' }>
-                <form onSubmit={handleSubmit} className='formFeedback' id='contacts'>
+            <div className={theme === 'dark'? 'darkForm ' : '' }>
+                <div className='container-xl py-4'>
+                <div className='row'>
+                <form onSubmit={handleSubmit} className='formFeedback col-md-7' id='contacts'>
                     <h3>Contato</h3>
-
+                    <div className='form-row'>
+                    <div className="form-group col-md-6">
                     <label htmlFor='name'>Nome:</label>
-                    <input maxLength='70' required type='text' value={name} onChange={e=> setName(e.target.value)} name='name' />
+                    <input className='form-control' id='name' maxLength='70' required type='text' value={name} onChange={e=> setName(e.target.value)} name='name' />
+
+                    </div>
+                    <div className="form-group col-md-6">
                     <label  htmlFor='email'>Email:</label>
-                    <input maxLength='70' required type='email' value={email} onChange={e=> setEmail(e.target.value)} name='email' />
+                    <input className='form-control' id='email' maxLength='70' required type='email' value={email} onChange={e=> setEmail(e.target.value)} name='email' />
+                    </div>
+                    <div className="form-group col-12">
                     <label htmlFor='comments'>Mensagem:</label>
-                    <textarea maxLength='400' required type='text' value={msg} onChange={e=> setMsg(e.target.value)} name='comments'></textarea>
-                    <button type='submit' disabled={disable}>Enviar</button>
+                    <textarea className='form-control' id='comments' maxLength='400' required type='text' value={msg} onChange={e=> setMsg(e.target.value)} name='comments'></textarea>
+                    </div>
+
+                    </div>
+                    <button className='mt-4' type='submit' disabled={disable}>Enviar</button>
                     <Spinner className='spinner' animation={loading ? 'border' : ''} variant="primary"/>
                 </form>
-                <div className='networks'>
+                <div className='networks col-md-5 mt-3 mt-md-0 '>
                 <h3>Redes Sociais</h3>
                 <ul className='contacts'>
                 <li><a href='https://github.com/lucasecp' target='_blank'  rel="noopener noreferrer"><FaGithub className='contact-img github' color='black'/>github.com/lucasecp</a></li>
@@ -99,6 +110,11 @@ export default function () {
                 <li><a href='https://www.linkedin.com/in/lucas-emerson/'  rel="noopener noreferrer" target='_blank'><FaLinkedin className='contact-img' color=' #2867B2'/>linkedin.com/in/lucas-emerson/</a></li>
             </ul>
             </div>
+
+                </div>
+
+                </div>
+
             </div>
         )
 } 

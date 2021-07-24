@@ -1,20 +1,19 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 $darkMode:#0D0D0D;
-$primaryColor: #1155a3 ;
+$primaryColor: #3c8deb ;
 $secondaryColor: #F2F2F2;
 $thirdColor: #fff ;
 $fourthColor: #D0D3D9;
-$fontColor: rgba(0,0,0,1);
-$success:#32CD32 ;
+$fontColor: rgb(80, 79, 79);
 
-$fontSm: 1.125em;
-$fontMd: 1.625em;
-$fontLg: 2.25em;
-$fontXl: 3em;
-$fontP: 1.25em;
+$fontSm: 14px;
+$fontMd: 22px;
+$fontLg: 28px;
+$fontXl: 36px;
+$fontP: 18px;
 
-$font: 'Oswald',Arial;
-$font2: 'Oswald',Arial;
+$font: 'Roboto',Arial;
+$font2: 'Roboto',Arial;
 $marginSubTitle: 20px;
 $letterSpacing: 1px;
 
@@ -50,41 +49,32 @@ $letterSpacing: 1px;
     font-weight: 300;
 
     @if $type == 'large'{
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
     font-size: $fontLg;
     color: $secondaryColor;
-    @include device(md){
-        font-size: 1.875em;
-    };
     };
     @if $type == 'medium'{
-        font-family: 'Oswald', sans-serif;
-        font-size: 1.75em;
-        color: $fontColor;
-        @include device(md){
-            font-size: 1.5625em;
-        };
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.30em;
+        color: $darkMode;
+        text-transform: uppercase
 
     };
     @if $type == 'small'{
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: $fontSm;
-        @include device(md){
-            font-size: 1.0625em;
-        };
+      
         color: $fontColor;
-        line-height: $fontSm * 1.5;
+        line-height: $fontSm * 1.8;
 
     }
     @if $type == 'p'{
         font-family: 'Arial', sans-serif;
         font-size: $fontP;
         color: $fontColor;
-        line-height: $fontP * 1.5;
+        line-height: $fontP * 1.8;
         
-        @include device(md){
-            font-size: 1.125em;
-        };
+    
     }
 }

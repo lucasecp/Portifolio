@@ -1,6 +1,6 @@
 footer {
     margin: 0;
-    background: $primaryColor;   
+    background: $secondaryColor;   
     height: 50px;
     display: flex;
     align-items: center;
@@ -12,5 +12,5 @@ footer {
 footer p{
     padding: 0;
     @include fontStyle(small);
-    color: $secondaryColor;
+    color: $darkMode;
 }

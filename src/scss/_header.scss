@@ -39,15 +39,20 @@ header{
 
  nav ul h1 a{
     @include fontStyle(large);
-    color:$secondaryColor;
+    color:$thirdColor;
     text-decoration: none !important;
-    letter-spacing: 1px;
     &:hover{
         color: $secondaryColor;
     }
+
 }
 nav ul h1{
     margin: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .hamburger{
@@ -143,14 +148,14 @@ nav ul{
 
 }
 nav ul li{
-    padding: 0 20px;
+    padding: 0 10px;
     @include device(md){
         padding: 10px !important;
     }
 }
 
 nav li a{
-    @include fontStyle(small);
+    font-size: 16px;
     font-family: $font;
     padding: 5px;
     transition: .2s;
@@ -159,7 +164,7 @@ nav li a{
         color: $thirdColor
     }
 }
-.contact-img{
+nav .contact-img{
     color: $secondaryColor;
     height: 30px;
     width: 30px;
