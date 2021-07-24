@@ -33,7 +33,12 @@
     border: $thirdColor 2px solid;
     margin: 20px auto !important;
     border-radius: 5px;
-    text-transform: uppercase
+    text-transform: uppercase;
+    transition: .3s;
+}
+.outline-btn:hover{
+    background-color:#032d5e;
+    transition: .3s
 }
 .about p{
     @include fontStyle(p);
