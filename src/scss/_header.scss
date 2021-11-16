@@ -1,175 +1,228 @@
-header{
-    width:100%;
-    height:100vh;
-}
-
-.bg-header{
-    height:100%;
-    width: 100%;
-    background-image: url('../assets/img/background.jpg');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
-    position: relative;
-    @include device(lg){
-    background-attachment: fixed;
-    background-position: center
-    }
-}
-.list .listNetworks{
-    display: flex;
-    align-items: center;
-        @include device(md){
-            border-top: $secondaryColor solid 1px;
-            justify-content: space-evenly;
-           
-        & li{
-            margin: 0 ;
-        }
-        }
-        @include device(sm-sm){
-            flex-direction: column;
-        }
-        @include device(lg){
-          border-left: $secondaryColor solid 1px;
-          justify-content: space-between;
-        }
-}
-
-
- nav ul h1 a{
+header {
+  h2 {
     @include fontStyle(large);
-    color:$thirdColor;
-    text-decoration: none !important;
-    &:hover{
-        color: $secondaryColor;
-    }
-
-}
-nav ul h1{
-    margin: 5px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.hamburger{
-    cursor: pointer;
-    display:none;
-    height: 25px;
-    width: 25px;
-    color: $secondaryColor ;
-    position: relative;
-    top: 10px;
-    right:10px;
-   @include device(md){
-       display:block  !important;
-}
-
-}
-.hamburger:active{
-    outline: solid 1px $secondaryColor;
-}
-nav{
-    position: fixed;
-    top:0;
-    width:100%;
-    transition: .5s ;
-    z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        z-index: 1 !important;
-      @include device(md){
-        height:45px;
-      }
-}
-.listBg{
-    display:flex;
-    align-items: center;
+    color: $fontColor;
+    font-weight: 400;
+    margin-top: 60px;
+    line-height: 40px;
+    margin-bottom: 20px;
     @include device(md){
-        height: 100vh;
-        width: 100%;
-        z-index: 3;
+        margin-top: 30px
+    }
+    span {
+      animation: textHeader 4s infinite;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      position: relative;
+      animation-timing-function: steps(25, end);
+      height: 30px;
+      &::after {
+        content: "|";
         position: absolute;
-        display:flex;
-    }
-}
-
-nav li{
-    @include device(lg){
-        margin: auto 0
-    }
-}
-.active{
-    @include device(md){
-        left: 0
+        right: 0;
+        animation: caret infinite;
+        animation-duration: 1s;
+        animation-timing-function: steps(1, end);
       }
+    }
+  }
 }
-.scroll-nav .active, .scroll-nav .list{
-     background:$primaryColor;
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
-.scroll-nav  {
-    background:$primaryColor;
+
+@keyframes textHeader {
+  0%,
+  100% {
+    width: 0;
+  }
+  20%,
+  80% {
+    width: 130px;
+  }
 }
-// Dark mode
-.darkNav .scroll-nav .active, .darkNav .scroll-nav .list{
-  background:$darkMode;
+
+.listNetworks {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
 }
-.darkNav .scroll-nav  {
-    background:$darkMode;
+
+nav ul h1 a {
+  @include fontStyle(large);
+  color: $fontColor;
+  text-decoration: none !important;
+  font-size: 30px;
+  &:hover {
+    color: $fontColor;
+  }
 }
-.darkNav a, .darkNav .hamburger{
-    color: $fourthColor
+nav ul h1 {
+  margin: 5px 0;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
 }
-.scroll-nav .list{
-    @include device(lg){
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+  height: 25px;
+  width: 25px;
+  margin-right: 15px;
+  color: $fontColor;
+  @include device(md) {
+    display: block !important;
+  }
+}
+.hamburger:active {
+  outline: solid 1px $secondaryColor;
+}
+nav {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  width: 100%;
+  z-index: 99;
+  top: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav svg {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li {
+  @include device(lg) {
+    margin: auto 0;
+  }
+}
+.container-img-header{
+   display: grid;
+   min-height: 400px;
+   @include device(md) {
+       margin-top: 20px
+   }
+}
+.container-img-header img{
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    grid-area: 1/1;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        transition: .3s;
+    }
+}
+.list {
+    >div{
+        display:flex;
+        align-items: center;
+    }
+  @include device(md) {
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    position: fixed;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    transition:  .3s;
+    > div {
+      background-color: $primaryColor;
+      top: 0;
+      position: absolute;
+      left: -100%;
+      height: 100vh;
+      width: 60%;
+      padding: 40px 0 0 20px;
+      z-index: 100;
+      transition: .3s;
+      flex-direction: column;
+      align-items: start;
+    }
+    li + li {
+      margin-left: 0px;
+      margin-top: 20px;
+    }
+    li a {
+      color: #fff;
+    }
+    &.active,
+    &.active > div {
+      left: 0;
+    }
+    &.active > div {
+      transition: .3s;
+    }
+    &:active {
+      transition: none !important;
+    }
+  }
+}
+
+.darkNav .scroll-nav .active,
+.darkNav .scroll-nav .list {
+  background: $darkMode;
+}
+ .dark-header  {
+  background: $darkMode;
+  h2{
+      color: #fff
+  }
+}
+.darkNav a,
+.darkNav .hamburger {
+  color: $fourthColor;
+}
+.scroll-nav .list {
+  @include device(lg) {
     background: none !important;
-    }
-}
-.scroll-nav h1 a, .scroll-nav .hamburger{
-    color: $secondaryColor !important
-}
-nav ul{ 
-    width:100%;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    transition: .4s;
-    height:100%;
-    
-}
-.list{
-  text-align: center;
-  padding:  0;
-  margin: 0;   
-
-}
-nav ul li{
-    padding: 0 10px;
-    @include device(md){
-        padding: 10px !important;
-    }
+  }
 }
 
-nav li a{
-    font-size: 16px;
-    font-family: $font;
-    padding: 5px;
-    transition: .2s;
-    color : $thirdColor;
-    &:hover{
-        color: $thirdColor
-    }
+nav ul {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.4s;
+  height: 100%;
+  align-items: center;
 }
-nav .contact-img{
-    color: $secondaryColor;
-    height: 30px;
-    width: 30px;
-    margin:10px
+
+nav ul li + li {
+  margin-left: 20px;
 }
-nav ul .listNetworks li{
-    padding:5px
+
+nav li a {
+  font-size: 18px;
+  font-family: $font;
+  transition: 0.2s;
+  color: $fontColor;
+  font-weight: 500;
+  &:hover {
+    color: $fontColor;
+  }
+}
+nav .contact-img {
+  color: $primaryColor;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+nav ul .listNetworks li {
+  padding: 5px;
 }

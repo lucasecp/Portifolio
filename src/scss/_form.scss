@@ -116,7 +116,9 @@ form  h3, .formContainer h3{
 .darkForm h3::after{
     background: $fourthColor
 }
-
+.darkForm .formFeedback input, .darkForm .formFeedback textarea{
+   background: #f9f9f9
+}
 .darkForm .formFeedback input, .darkForm .formFeedback textarea, .darkForm button{
     color: $darkMode
 }

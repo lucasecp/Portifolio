@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 $darkMode:#0D0D0D;
-$primaryColor: #3c8deb ;
+$primaryColor: #ECDD72 ;
 $secondaryColor: #F2F2F2;
 $thirdColor: #fff ;
 $fourthColor: #D0D3D9;
@@ -52,12 +52,11 @@ $letterSpacing: 1px;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: $fontLg;
-    color: $secondaryColor;
+
     };
     @if $type == 'medium'{
         font-family: 'Roboto', sans-serif;
         font-size: 1.30em;
-        color: $darkMode;
         text-transform: uppercase
 
     };
@@ -65,14 +64,12 @@ $letterSpacing: 1px;
         font-family: 'Roboto', sans-serif;
         font-size: $fontSm;
       
-        color: $fontColor;
         line-height: $fontSm * 1.8;
 
     }
     @if $type == 'p'{
         font-family: 'Arial', sans-serif;
         font-size: $fontP;
-        color: $fontColor;
         line-height: $fontP * 1.8;
         
     

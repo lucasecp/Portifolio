@@ -3,7 +3,7 @@
 }
 .about h2{
     text-align: center;
-    padding: 30px 0;
+    padding: 0px 0 30px 0;
     @include fontStyle(medium);
     font-weight: 500;
     color: rgb(8, 8, 8);
@@ -25,20 +25,21 @@
 }
 
 .outline-btn{
-    padding: 5px 30px ;
-    background: $primaryColor;
+    padding: 10px 30px !important;
     border-radius: 5px ;
     @include fontStyle('small');
-    color: $thirdColor;
-    border: $thirdColor 2px solid;
-    margin: 20px auto !important;
-    border-radius: 5px;
+    color: $primaryColor;
     text-transform: uppercase;
     transition: .3s;
+    background:  $primaryColor ;
+    color: #fff;
+    display: inline-block;
 }
 .outline-btn:hover{
     background-color:#032d5e;
-    transition: .3s
+    transition: .3s;
+    text-decoration: none;
+    color: #fff
 }
 .about p{
     @include fontStyle(p);
