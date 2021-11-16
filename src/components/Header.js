@@ -3,14 +3,14 @@ import { FaBars } from "react-icons/fa";
 import imageHeader1 from "../assets/img/marginalia-web-programer.png";
 import imageHeader2 from "../assets/img/cherry-lunch-at-work-1.png";
 import imageHeader3 from "../assets/img/fogg-208.png";
-import curriculumPdf from "../assets/img/png2pdf.pdf";
+import curriculumPdf from "../assets/img/Lucas.pdf";
 import { FaRegListAlt } from "react-icons/fa";
 import { useTheme } from "../context/Theme";
 
 export default () => {
   const { theme } = useTheme();
   const [activePhoto, setActivePhoto] = useState(1);
-  
+
   useEffect(() => {
     const list = document.querySelector(".list");
     const div = document.querySelector(".listBg");
