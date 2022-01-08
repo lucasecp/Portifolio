@@ -15,7 +15,7 @@ export default () => {
           <p>
             Me chamo Lucas, tenho 23 anos, sou formado em Análise e desenvolvimento de
             sistemas. Atuo como desenvolvedor front end criando sistemas
-            utilizando React js, Javascript, HTML, CSS, styled-components,
+            utilizando React js, Javascript, typescript, HTML, CSS, styled-components,
             Material-UI e Bootstrap.
           </p>
           <p>
