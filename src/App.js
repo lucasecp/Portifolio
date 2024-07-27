@@ -18,12 +18,12 @@ export default () => {
         <>
             <ThemeProvider>
                 <Header />
-                <Button/>
                 <Section />
                 <Main />
                 <Form />
                 <Footer />
                 <ToastContainer limit={1} hideProgressBar={true} autoClose={3000} />
+                <Button/>
             </ThemeProvider>
 
         </>

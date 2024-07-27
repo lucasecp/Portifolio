@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
-import imageHeader1 from "../assets/img/marginalia-web-programer.png";
-import imageHeader2 from "../assets/img/cherry-lunch-at-work-1.png";
-import imageHeader3 from "../assets/img/fogg-208.png";
-import curriculumPdf from "../assets/img/Lucas.pdf";
-import { FaRegListAlt } from "react-icons/fa";
 import { useTheme } from "../context/Theme";
 
 export default () => {
@@ -52,13 +47,10 @@ export default () => {
             >
               <div>
                 <li>
-                  <a href="#about">Sobre</a>
+                  <a href="#projects" onClick={handleClick}>Projetos</a>
                 </li>
                 <li>
-                  <a href="#projects">Projetos</a>
-                </li>
-                <li>
-                  <a href="#contacts">Contato</a>
+                  <a href="#contacts" onClick={handleClick}>Contato</a>
                 </li>
               </div>
             </div>
@@ -66,45 +58,6 @@ export default () => {
         </div>
         <FaBars onClick={handleClick} className="hamburger " />
       </nav>
-
-      <header className={theme === "dark" ? "dark-header" : ""}>
-        <div className="container-xl">
-          <div className="row ">
-            <div className="col-md-7 ">
-              <h2>
-                Olá, me chamo Lucas. <br />
-                Sou desenvolvedor <span> Front-end</span>
-              </h2>
-              <a
-                href={curriculumPdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="outline-btn"
-              >
-                <FaRegListAlt className="mr-1" />
-                Download Cv
-              </a>
-            </div>
-            <div className="col-md-5 container-img-header">
-              <img
-                alt="slideImg"
-                src={imageHeader1}
-                className={activePhoto === 1 && "active"}
-              />
-              <img
-                alt="slideImg"
-                src={imageHeader2}
-                className={activePhoto === 2 && "active"}
-              />
-              <img
-                alt="slideImg"
-                src={imageHeader3}
-                className={activePhoto === 3 && "active"}
-              />
-            </div>
-          </div>
-        </div>
-      </header>
     </>
   );
 };
