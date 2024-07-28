@@ -1,7 +1,7 @@
 header {
-  margin-top: 60px;
+  padding-top: 60px;
   @include device(md){
-      margin-top: 30px
+      padding-top: 30px
   }
   h2 {
     @include fontStyle(large);
@@ -180,12 +180,12 @@ nav li {
 }
  .dark-header  {
   background: $darkMode;
-  h2{
+  h2, p{
       color: #fff
+    }
   }
-}
-.darkNav a,
-.darkNav .hamburger {
+  .darkNav a,
+  .darkNav .hamburger {
   color: $fourthColor;
 }
 .scroll-nav .list {
