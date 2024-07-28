@@ -78,7 +78,7 @@ export default function () {
     }
 
         return (
-            <div className={theme === 'dark'? 'darkForm ' : '' }>
+            <div className={theme === 'dark'? 'darkForm form' : 'form' }>
                 <div className='container-xl py-4'>
                 <div className='row'>
                 <form onSubmit={handleSubmit} className='formFeedback col-md-7' id='contacts'>
