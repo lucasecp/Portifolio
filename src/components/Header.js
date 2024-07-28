@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FaBars } from "react-icons/fa";
-import { useTheme } from "../context/Theme";
 
 export default () => {
-  const { theme } = useTheme();
-  const [activePhoto, setActivePhoto] = useState(1);
 
   useEffect(() => {
     const list = document.querySelector(".list");
@@ -19,7 +16,7 @@ export default () => {
         list.classList.remove("active");
       }
     });
-    slidePhotos();
+
   }, []);
 
   function handleClick() {
@@ -27,11 +24,6 @@ export default () => {
     element.classList.toggle("active");
   }
 
-  const slidePhotos = () => {
-    setInterval(() => {
-      setActivePhoto((prev) => (prev < 3 ? prev + 1 : 1));
-    }, 4000);
-  };
 
   return (
     <>
